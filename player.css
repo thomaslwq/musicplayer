@@ -1,0 +1,203 @@
+#app {
+  background: url(imgs/bg1.jpeg) no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --themeColor: #1baad5;
+}
+@keyframes running {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#app .hidden {
+  display: none;
+}
+#app .show {
+  display: block;
+}
+#app .app-palyer {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  border-radius: 10px;
+}
+#app .app-palyer .app-player-searchBar {
+  height: 60px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--themeColor);
+}
+#app .app-palyer .app-player-searchBar .title {
+  color: white;
+  font-weight: 200;
+}
+#app .app-palyer .app-player-searchBar input {
+  width: 300px;
+  height: 30px;
+  border: 0px;
+  border-radius: 20px;
+  text-indent: 15px;
+  background: url(imgs/zoom.png) 270px center no-repeat white;
+}
+#app .app-palyer .app-player-content {
+  height: 480px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px dotted var(--themeColor);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#app .app-palyer .app-player-content .app-player-content-left {
+  width: 200px;
+  border-right: 1px dotted var(--themeColor);
+  height: 480px;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list .app-player-songs-list-item {
+  border-radius: 5px;
+  padding: 10px;
+  height: 40px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list .app-player-songs-list-item .player-audio {
+  width: 25px;
+  height: 25px;
+  background: url(imgs/table.png) -18px -18px;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list .app-player-songs-list-item .player-name {
+  height: 30px;
+  width: 150px;
+  font-size: 16px;
+  color: #f8f1f1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 30px;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list .app-player-songs-list-item .player-mv {
+  width: 30px;
+  height: 20px;
+  background: url(imgs/table.png) left -45px;
+}
+#app .app-palyer .app-player-content .app-player-content-left .app-player-songs-list .app-player-songs-list-item:nth-child(odd) {
+  background-color: rgba(224, 217, 217, 0.5);
+}
+#app .app-palyer .app-player-content .app-player-content-middle {
+  width: 400px;
+  border-right: 1px dotted var(--themeColor);
+  position: relative;
+}
+#app .app-palyer .app-player-content .app-player-content-middle .player-bar {
+  left: 200px;
+  position: absolute;
+  z-index: 8;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: all 2s;
+}
+#app .app-palyer .app-player-content .app-player-content-middle .playing {
+  transform: rotate(0);
+}
+#app .app-palyer .app-player-content .app-player-content-middle .cover {
+  top: 156px;
+  left: 156px;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+#app .app-palyer .app-player-content .app-player-content-middle .disc {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+#app .app-palyer .app-player-content .app-player-content-middle .autorotate {
+  animation-name: running;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#app .app-palyer .app-player-content .app-player-content-right {
+  width: 200px;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-title {
+  font-weight: 500;
+  padding: 5px;
+  height: 30px;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list {
+  height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list .comment-list-item {
+  padding: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list .comment-list-item .imageWrapper {
+  padding: 5px;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list .comment-list-item .imageWrapper img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list .comment-list-item .comment-content .nickName {
+  font-size: 16px;
+}
+#app .app-palyer .app-player-content .app-player-content-right .comment-list .comment-list-item .comment-content .content {
+  font-size: 12px;
+  color: white;
+  font-weight: 100;
+}
+#app .app-palyer .app-player-footer {
+  height: 60px;
+  width: 100%;
+  background-color: var(--themeColor);
+}
+#app .app-palyer .app-player-footer audio {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#app .app-palyer .app-player-footer .video-box video {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  height: 800px;
+  width: 600px;
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+}
+#app .app-palyer .app-player-footer .video-box .vedio-close {
+  position: fixed;
+  color: white;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+#app .app-palyer .app-player-footer .video-box .video-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background-color: black;
+  z-index: 888;
+}
