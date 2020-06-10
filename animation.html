@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes autorotate {
+            from {
+                transform: rotate(0)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        disc {
+            animation-name: autorotate;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        .bar{
+            transform: rotate(25deg);
+            transform-origin: 12px 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img class="disc" src="./imgs/disc.png" alt="">
+    <img  class="bar" src="./imgs/player_bar.png" alt="">
+</body>
+
+</html>
